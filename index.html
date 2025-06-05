@@ -5,19 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vladimir Lihatchov – Portfolio</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 2em;
       line-height: 1.6;
-      max-width: 800px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+      color: #2c3e50;
+      background-color: #f9f9f9;
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
       color: #2c3e50;
+      margin-top: 0.5em;
     }
 
     a {
@@ -32,44 +37,147 @@
     .section {
       margin-bottom: 2em;
     }
+
+    .project-images {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      overflow-x: auto;
+      padding-bottom: 0.5em;
+    }
+
+    .project-images.climbhub img {
+      flex: 0 0 auto;
+      height: 300px;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-images.smartwatch img {
+      flex: 0 0 300px;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-images.beready img {
+      flex: 0 0 auto;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      .project-images.smartwatch img {
+        flex: 0 0 150px;
+        width: 150px;
+        height: 100px;
+      }
+
+      .project-images.beready img {
+        max-width: 200px;
+      }
+
+      .project-images.climbhub img {
+        height: 150px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <h1>Vladimir Lihatchov</h1>
-  <p>📍 Tel Aviv · 📧 <a href="mailto:lichvladimir@gmail.com">lichvladimir@gmail.com</a> ·
+  <p>📍 Tel Aviv · 📧
+    <a href="mailto:lichvladimir@gmail.com">lichvladimir@gmail.com</a> ·
     <a href="https://www.linkedin.com/in/vlad-lihatchov-a83453248/" target="_blank">LinkedIn</a> ·
     <a href="https://github.com/Rimidelo" target="_blank">GitHub</a>
   </p>
-  <p>I'm a third-year Software Engineering student with experience in full stack development, embedded systems, and
-    product management in the Israeli Navy. I enjoy building practical, real-world solutions that make a meaningful
-    impact.</p>
+  <p>
+    I'm a third-year Software Engineering student with real-world experience in full-stack and embedded development,
+    including leading projects during my service in the Israeli Navy. I like building things that actually work — from
+    low-level C code on microcontrollers to full web platforms with real users. I'm fast to learn, hands-on, and focused
+    on getting things done right.
+  </p>
+
 
   <div class="section">
     <h2>💻 Projects</h2>
 
     <h3>Embedded Smartwatch</h3>
-    <p>C project on a PIC24 microcontroller with an OLED display and accelerometer. Displays motion data on screen.</p>
     <p>
-      <a href="https://github.com/Rimidelo/Embedded---Smartwatch-Project" target="_blank">Project Code</a>
+      Developed a smartwatch using C on a low-level PIC24 microcontroller. Integrated an OLED screen for UI display and
+      used an onboard accelerometer to detect motion and gestures in real time. Focused on embedded system design and
+      hardware-level programming.
+    </p>
+    <div class="project-images smartwatch">
+      <a href="images/smartwatch_1.png" target="_blank">
+        <img src="images/smartwatch_1.png" alt="Smartwatch screenshot 1" />
+      </a>
+      <a href="images/smartwatch_2.png" target="_blank">
+        <img src="images/smartwatch_2.png" alt="Smartwatch screenshot 2" />
+      </a>
+    </div>
+    <p>
+      <a href="https://github.com/Rimidelo/Embedded---Smartwatch-Project" target="_blank">View code on GitHub</a>
     </p>
 
     <h3>ClimbHub</h3>
-    <p>Video-sharing platform for climbers built with React, Node.js, and MongoDB. Hosted on Google Cloud.</p>
+    <p>
+      Created a full-stack platform for climbers using React, Node.js, and MongoDB. Users can upload and watch climbing
+      videos, organized by gym and route. Hosted on Google Cloud with secure media handling and user management.
+      ClimbHub is a community-driven app designed to help climbers share beta and progress.
+    </p>
+    <div class="project-images climbhub">
+      <a href="images/climbhub_1.png" target="_blank">
+        <img src="images/climbhub_1.png" alt="ClimbHub mobile home screen" />
+      </a>
+      <a href="images/climbhub_2.png" target="_blank">
+        <img src="images/climbhub_2.png" alt="ClimbHub mobile profile screen" />
+      </a>
+      <a href="images/climbhub_3.png" target="_blank">
+        <img src="images/climbhub_3.png" alt="ClimbHub gyms screen" />
+      </a>
+      <a href="images/climbhub_4.png" target="_blank">
+        <img src="images/climbhub_4.png" alt="ClimbHub reels screen" />
+      </a>
+    </div>
     <p>
       <a href="https://github.com/Rimidelo/climbhub_client" target="_blank">Client Code</a> |
       <a href="https://github.com/Rimidelo/climbhub_server" target="_blank">Server Code</a>
     </p>
 
-    <h3>BeReady</h3>
-    <p>Web app for students preparing for military enlistment. Features secure backend with user profile management.</p>
+    <h3>BeReady WebApp</h3>
+    <p>
+      Built a responsive web application using HTML, JavaScript, Node.js, and SQL to help users prepare for enlistment.
+      Implemented user authentication, progress tracking, and activity planning through RESTful APIs. Designed both
+      client and server sides for full control of data flow. Focused on practical use and real-life impact.
+    </p>
+    <div class="project-images beready">
+      <a href="images/beready_1.png" target="_blank">
+        <img src="images/beready_1.png" alt="BeReady activities page" />
+      </a>
+      <a href="images/beready_2.png" target="_blank">
+        <img src="images/beready_2.png" alt="BeReady profile and progress" />
+      </a>
+    </div>
     <p>
       <a href="https://github.com/Rimidelo/BeReady" target="_blank">Client Code</a> |
       <a href="https://github.com/Rimidelo/BeReady---server" target="_blank">Server Code</a>
     </p>
-
-
   </div>
 
   <div class="section">
